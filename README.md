@@ -43,13 +43,13 @@ Json file should look like this:
 
 Or you can load strings from your script like this:
 
-```java
-{
+```javascript
+languager.load({
     "titleMyWebsite": {
-        en: "This is my website",
-        cs: "Toto je moje webová stránka"
+        "en": "This is my website",
+        "cs": "Toto je moje webová stránka"
     }
-}
+})
 ```
 
 ## Language change button
