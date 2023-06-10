@@ -7,7 +7,7 @@ Languager is ease to use JavaScript program that will make ease to create websit
 Just put this code inside `<head>`
 
 ```html
-<script src='https://raw.githubusercontent.com/JZITNIK-github/Languager/master/module.js'
+<script src='https://raw.githubusercontent.com/JZITNIK-github/Languager/master/module.js'></script>
 ```
 
 ## Usage
