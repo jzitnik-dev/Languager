@@ -7,7 +7,7 @@ Languager is ease to use JavaScript program that will make ease to create websit
 Just put this code inside `<head>`
 
 ```html
-<script src='https://raw.githubusercontent.com/JZITNIK-github/Languager/master/module.js'></script>
+<script src='https://raw.githubusercontent.com/JZITNIK-github/Languager/master/module.js'
 ```
 
 ## Usage
@@ -51,6 +51,14 @@ languager.load({
     }
 })
 ```
+
+## Add string to your site
+
+```html
+<h1>[titleMyWebsite]</h1>
+```
+
+This will add h1 with titleMyWebsite text from json that you loaded.
 
 ## Language change button
 
