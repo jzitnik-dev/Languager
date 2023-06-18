@@ -15,15 +15,9 @@
 </body>
 <script>
     var languager = new Languager({
-        domElement: document.body,
-        supportedLanguages: ["en", "cs"],
-        defaultLanguage: "en"
+        element: document.body,
+        pageTitle: "homepage"
     })
-    languager.load({
-        "titleMyWebsite": {
-            "en": "This is my website",
-            "cs": "Toto je moje webová stránka"
-        }
-    })
+    languager.load("/test.json")
 </script>
 </html>
