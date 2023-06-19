@@ -1,6 +1,6 @@
 {
     "languager": true,
-    "name": "test",
+    "name": "myWebsite",
     "info": {
         "languages": {
             "supported": ["en", "cs"],
@@ -10,14 +10,14 @@
     },
     "strings": {
         "titleMyWebsite": {
-            "en": "This is my website",
-            "cs": "Toto je moje webová stránka"
+            "en": "My website",
+            "cs": "Moje webová stránka"
         }
     },
     "titles": {
         "homepage": {
-            "en": "This is my website",
-            "cs": "Toto je moje webová stránka"
+            "en": "My awesome page",
+            "cs": "Moje úžasná stránka"
         }
     }
 }
