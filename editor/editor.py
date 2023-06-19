@@ -21,7 +21,7 @@ def openProject():
         content = f.read()
     con = json.loads(content)
     if (con.get("languager", False) == True):
-        editingProject()
+        editingProject(con)
     else:
         print("\nSelected file is not Languager project!")
         main()
