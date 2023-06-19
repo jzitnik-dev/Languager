@@ -19,7 +19,12 @@ def openProject():
     path = input("Select path of json file: ")
     with open(path, "r",encoding='utf8') as f:
         content = f.read()
-    editingProject(json.loads(content))
+    con = json.loads(content)
+    if (con.get("languager", False) == True):
+        editingProject()
+    else:
+        print("\nSelected file is not Languager project!")
+        main()
 
 def createNewProject():
     name = input("Select project name: ")
