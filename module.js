@@ -1,4 +1,5 @@
 class Languager {
+    #useLiveUpdate
     constructor({element, pageTitle}) {
         this.userlang = localStorage.getItem("language") || ((navigator.language || navigator.userLanguage).split("-")[0])
         this.element = element
@@ -8,14 +9,14 @@ class Languager {
     changeLanguage(language) {
         this.language = this.supported.includes(language) ? language : this.defaultLanguage
         localStorage.setItem("language",this.language)
-        if (this.useLiveUpdate) {
-            this._liveUpdate()
+        if (this.#useLiveUpdate) {
+            this.#liveUpdate()
         }
         else {
             window.location.reload()
         }
     }
-    _liveUpdate() {
+    #liveUpdate() {
         var strings = this.strings
         var allElements = this.element.getElementsByTagName("*");
         allElements = Array.prototype.slice.call(allElements);
@@ -47,7 +48,7 @@ class Languager {
         this.supported = data.info.languages.supported
         this.defaultLanguage = data.info.languages.default
         this.language = this.supported.includes(this.userlang) ? this.userlang : this.defaultLanguage
-        this.useLiveUpdate = data.info.liveUpdate
+        this.#useLiveUpdate = data.info.liveUpdate
         this.titles = data.titles
         this.titles[this.title] ? (this.titles[this.title][this.language] ? document.title = this.titles[this.title][this.language] : null) : null
 
@@ -58,7 +59,7 @@ class Languager {
             var text = element.textContent?.trim()
             if (text[0] == "[" && text[text.length - 1] == "]") {
                 text = text.slice(1, -1)
-                this.useLiveUpdate ? element.setAttribute("defaultvalue", element.textContent) : null
+                this.#useLiveUpdate ? element.setAttribute("defaultvalue", element.textContent) : null
                 if (this.strings[text] !== undefined && this.strings[text][this.language] !== undefined) {
                     element.textContent = this.strings[text][this.language]
                 }
