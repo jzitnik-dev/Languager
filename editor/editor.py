@@ -61,7 +61,8 @@ def editingProject(js):
         print("2. Edit strings")
         print("3. Edit titles")
         print("4. Save project")
-        print("5. Exit without saving")
+        print("5. Get status of the project")
+        print("6. Exit without saving")
         ans = input("Your choice: ").strip()
         if ans == "1":
             projectConfiguration(js)
@@ -72,10 +73,35 @@ def editingProject(js):
         elif ans == "4":
             save(js)
         elif ans == "5":
+            status(js)
+        elif ans == "6":
             exit()
         else:
             print("\nInvalid choice!")
             mainMenu(js)
+    def status(js):
+        print("Getting status information...")
+        print("Getting status of strings")
+        supportedLanguages = js["info"]["languages"]["supported"]
+        languageMissing = []
+        emptyKey = []
+        for key in js["strings"]:
+            value = js["strings"][key]
+            # If empty key or language missing
+            if bool(value) == False:
+                emptyKey.append(key)
+            else:
+                for lang in supportedLanguages:
+                    if not lang in value: languageMissing.append([key, lang])
+        print("Showing status...")
+        print("\n"+("-"*20))
+        print("Empty keys: "+ ", ".join(emptyKey))
+        print("\nLanguage missing")
+        for data in languageMissing:
+            print(f"Key: {data[0]} Language: {data[1]}")
+        print(("-")*20)
+        editingProject(js)
+            
 
     def projectConfiguration(js):
         def editLiveUpdate(js):
