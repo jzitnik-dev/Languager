@@ -17,14 +17,19 @@ def main():
 
 def openProject():
     path = input("Select path of json file: ")
-    with open(path, "r",encoding='utf8') as f:
-        content = f.read()
-    con = json.loads(content)
-    if (con.get("languager", False) == True):
-        editingProject(con)
-    else:
-        print("\nSelected file is not Languager project!")
+    try:
+        with open(path, "r",encoding='utf8') as f:
+            content = f.read()
+    except FileNotFoundError:
+        print("Fatal Error: No such file.")
         main()
+    else:
+        con = json.loads(content)
+        if (con.get("languager", False) == True):
+            editingProject(con)
+        else:
+            print("\nSelected file is not Languager project!")
+            main()
 
 def createNewProject():
     name = input("Select project name: ")
@@ -47,7 +52,7 @@ def createNewProject():
 def save(js):
     final = json.dumps(js, ensure_ascii=False)
     path = input("Select path where should be file saved (include filename): ")
-    with open(path+".json", "w", encoding='utf8') as f:
+    with open(path, "w", encoding='utf8') as f:
         f.write(final)
     print("Project was saved!")
 def editingProject(js):
