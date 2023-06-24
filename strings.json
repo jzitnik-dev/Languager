@@ -1,6 +1,23 @@
 {
-    "titleMyWebsite": {
-        "en": "This is my website",
-        "cs": "Toto je moje webová stránka"
+    "languager": true,
+    "name": "myWebsite",
+    "info": {
+        "languages": {
+            "supported": ["en", "cs"],
+            "default": "en"
+        },
+        "liveUpdate": true
+    },
+    "strings": {
+        "titleMyWebsite": {
+            "en": "My website",
+            "cs": "Moje webová stránka"
+        }
+    },
+    "titles": {
+        "homepage": {
+            "en": "My awesome page",
+            "cs": "Moje úžasná stránka"
+        }
     }
 }
