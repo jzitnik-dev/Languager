@@ -7,7 +7,7 @@ Languager is ease to use JavaScript program that will make ease to create websit
 Download module.js and add the script to your webpage.
 
 ```html
-<script src='/module.js'
+<script src='https://raw.githubusercontent.com/JZITNIK-github/Languager/main/module.js'
 ```
 
 ## Usage
@@ -53,7 +53,7 @@ This button will change language to English.
 
 Editor is python program that will help you create your json file easily.
 
-### Run
+### Run editor
 
 To start editor you download editor.py file and run this command:
 
