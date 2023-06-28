@@ -25,10 +25,10 @@ class Languager {
             if (text[0] == "[" && text[text.length - 1] == "]") {
                 text = text.slice(1, -1)
                 if (strings[text] !== undefined && strings[text][this.language] !== undefined) {
-                    element.textContent = strings[text][this.language]
+                    element.innerHTML = strings[text][this.language]
                 }
                 else {
-                    element.textContent = "["+text+"]"
+                    element.innerHTML = "["+text+"]"
                 }
             }
         });
@@ -56,12 +56,12 @@ class Languager {
         allElements = Array.prototype.slice.call(allElements);
 
         allElements.forEach(element => {
-            var text = element.textContent?.trim()
+            var text = element.innerHTML?.trim()
             if (text[0] == "[" && text[text.length - 1] == "]") {
                 text = text.slice(1, -1)
-                this.#useLiveUpdate ? element.setAttribute("defaultvalue", element.textContent) : null
+                this.#useLiveUpdate ? element.setAttribute("defaultvalue", element.innerHTML) : null
                 if (this.strings[text] !== undefined && this.strings[text][this.language] !== undefined) {
-                    element.textContent = this.strings[text][this.language]
+                    element.innerHTML = this.strings[text][this.language]
                 }
             }
         });
