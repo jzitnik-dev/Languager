@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languager Project Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body>
+    <div id="root">
+        <input type="file" id="fileselect" style="display: none;" onchange="this.files[0] ? project(this.files[0], true) : null">
+        <div class="editString" style="display: none;">
+            <h1>String editor <box-icon onclick="addLanguage(this)" class="addBtn" name='plus-circle'></box-icon></h1>
+            <box-icon class="closeBtn" onclick="closeStringEditor()" name='x-circle' ></box-icon>
+            <div class="languages">
+                
+            </div>
+        </div>
+        <div class="editTitle" style="display: none;">
+            <h1>Title editor <box-icon onclick="addLanguageTitles(this)" class="addBtnTitle" name='plus-circle'></box-icon></h1>
+            <box-icon class="closeBtn" onclick="closeTitleEditor()" name='x-circle' ></box-icon>
+            <div class="languages">
+                
+            </div>
+        </div>
+        <section class="open-project">
+            <div class="box">
+                <h1 class="title">Open project</h1>
+                <button onclick="loadBoilerplate()">Create new project</button>
+                <button onclick="openProject()">Open existing project</button>
+            </div>
+        </section>
+        <section class="config" style="display: none;">
+            <box-icon class="closebtn" name='x-circle' onclick="closeConfig()"></box-icon>
+            <h1>Project configuration</h1>
+            <div class="supported">
+                <span>Supported languages: </span><input id="supportedlanguagesinput"><button onclick="changeSupportedLanguages(this.parentElement.querySelector('input#supportedlanguagesinput').value)">Save</button>
+            </div>
+
+            <div class="defaultlanguage">
+                <span>Default language: <span id="defaultlanguagetext"></span> <button onclick="changeDefaultLanguage()">Change</button><br>
+            </div>
+
+            <div class="liveupdate">
+                <input type="checkbox" onclick="changeLiveUpdate(this)" id="useliveupdate"><span> Use live update</span>
+            </div>
+        </section>
+        <section class="project" style="display: none;">
+            <menu>
+                <div class="button" onclick="openConfig()">Configure project</div>
+                <div class="button" onclick="saveProject()">Save project</div>
+                <div class="button" onclick="exit()">Exit</div>
+            </menu>
+            <header>
+                <div class="name"></div>
+                <box-icon class="menu" name='menu' onclick="openmenu()"></box-icon>
+            </header>
+            <div class="content">
+                <div class="strings">
+                    <div class="title">Strings editor <box-icon onclick="addString()" class="addBtn" name='plus-circle'></box-icon></div>
+                    <input type="text" class="search" placeholder="Search" onkeydown="searchStrings()">
+                    <div class="stringsDiv">
+                        <p>No string was created.</p>
+                    </div>
+                </div>
+                <div class="titles">
+                    <div class="title">Titles editor <box-icon onclick="addStringTitles()" class="addBtn" name='plus-circle'></box-icon></div>
+                    <input type="text" class="search" placeholder="Search" onkeydown="searchStrings()">
+                    <div class="titlesDiv">
+                        <p>No title was created.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
