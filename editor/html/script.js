@@ -307,9 +307,7 @@ function exit() {
     openmenu()
     ans = confirm("Are you sure you want to exit?")
     if (ans) {
-        project = undefined;
-        document.querySelector(".project").style.display = "none"
-        document.querySelector(".open-project").style.display = "flex"
+        window.location.reload()
     }
 }
 function download(filename, text) {
