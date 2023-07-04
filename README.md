@@ -51,9 +51,17 @@ This button will change language to English.
 
 ## Editor
 
+### HTML Editor
+
+You can visit JSON Editor written in HTML, CSS and JavaScript here
+
+[Open](https://jzitnik-github.github.io/Languager/editor/html/)
+
+### Python Editor
+
 Editor is python program that will help you create your json file easily.
 
-### Run editor
+#### Run editor
 
 To start editor you download editor.py file and run this command:
 
