@@ -55,7 +55,7 @@ This button will change language to English.
 
 You can visit JSON Editor written in HTML, CSS and JavaScript here
 
-[Open](https://jzitnik-github.github.io/Languager/editor/html/)
+[Open](https://jzitnik-dev.github.io/Languager/editor/html/)
 
 ### Python Editor
 
